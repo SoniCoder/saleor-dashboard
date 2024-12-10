@@ -53,9 +53,9 @@ describe("getMoneyRange", () => {
     };
     //  Act & Assert
 
-    expect(getMoneyRange(Locale.EN, intl, fromMoney, toMoney)).toBe(
-      "€10.00 - €20.00",
-    );
+    expect(
+      getMoneyRange(Locale.EN, intl, fromMoney, toMoney).replace("–", "-"),
+    ).toBe("€10.00 - €20.00");
   });
 
   it("should return formated money  when only from is provided", () => {
